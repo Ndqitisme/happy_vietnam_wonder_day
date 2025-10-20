@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>women's day</title>
+    <title>Kzun with love - 20/10</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css"
         integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -72,7 +72,7 @@
         .envelope {
             position: relative;
             width: 300px;
-            height: 200px;
+            /*height: 200px;*/
             background-color: #f08080;
         }
 
@@ -302,6 +302,42 @@
             align-items: center;
             height: 100vh;
             background-color: #fae1dd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #castle::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('./kzun.jpg');
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(1px);
+            transform: scale(1.05);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #castle::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(250, 225, 221, 0.6);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #castle>* {
+            position: relative;
+            z-index: 1;
         }
 
         .dustDef {
@@ -1108,7 +1144,7 @@
         // .textLetter text h2
         let indexText = 0;
         let textLetter = document.querySelector('.textLetter h2');
-        const textLetterH2 = "Chúc Kzun 20/10 vui vẻ nhaa ❤";
+        const textLetterH2 = "Chúc Kzun 20/10 vui vẻ nhaaa ❤";
         let timoutTextLetter;
 
         function textCharLetter() {
@@ -1136,13 +1172,12 @@
         // chữ của thư bạn muốn gửi
         let indexTextContent = 0;
         let textLetterContent = document.querySelector('.contentLetter');
-        const textLetterP = "💖💗 NDQ (ndqitvn): Chúc em luôn vui vẻ và giữ nụ cười trên môi để em luôn là bông hoa đẹp nhất hôm nay. Hãy luôn như vậy mãi nhé, đừng suy nghĩ những thứ không đáng lo . Hãy trân trọng những người còn ở bên và quý trọng những điều mà em có. Luôn nhớ ' Miệng luôn mỉm cười may mắn sẽ tới ' 😁 .";
+        const textLetterP = "💖💗 NDQ: Chúc em luôn vui vẻ và giữ nụ cười trên môi để em luôn là bông hoa đẹp nhất của anh hôm nay và mai sau nhé. Tuy anh tự biết mình không được hoàn hảo như bao người khác, nhưng anh nguyện lấy tất cả mọi thứ tốt nhất mình có để lấp vào khuyết điểm đó để yêu em. Dẫu sau này em có khó khăn thế nào, đừng quên vẫn có anh bên cạnh đồng hành cùng em, hãy luôn vui cười cùng với sự dễ thương đó mãi nhé cô gái của anh...!";
         let timoutTextLetterContent;
         function textCharLetterContent() {
             if (indexTextContent < textLetterP.length) {
                 textLetterContent.textContent += textLetterP[indexTextContent];
                 indexTextContent++;
-                setTimeout(textCharLetterContent, 1);
             }
             else {
                 clearInterval(timoutTextLetterContent)
@@ -1155,7 +1190,7 @@
             clearInterval(timoutTextLetterContent);
             timoutTextLetterContent = setInterval(() => {
                 textCharLetterContent();
-            }, 100)
+            }, 50)
         }
         $(document).ready(function () {
             $('.valentines').mouseenter(function () {
