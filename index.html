@@ -1108,11 +1108,11 @@
         // .textLetter text h2
         let indexText = 0;
         let textLetter = document.querySelector('.textLetter h2');
-        const textLetterH2 = "Chúc cậu 20/10 vui vẻ nhaa ❤";
+        const textLetterH2 = "Chúc Kzun 20/10 vui vẻ nhaa ❤";
         let timoutTextLetter;
 
         function textCharLetter() {
-                if (indexText < textLetterH2.length) {
+            if (indexText < textLetterH2.length) {
                 textLetter.textContent += textLetterH2[indexText];
                 indexText++;
                 setTimeout(textCharLetter, 100);
@@ -1139,7 +1139,7 @@
         const textLetterP = "💖💗 NDQ (ndqitvn): Chúc em luôn vui vẻ và giữ nụ cười trên môi để em luôn là bông hoa đẹp nhất hôm nay. Hãy luôn như vậy mãi nhé, đừng suy nghĩ những thứ không đáng lo . Hãy trân trọng những người còn ở bên và quý trọng những điều mà em có. Luôn nhớ ' Miệng luôn mỉm cười may mắn sẽ tới ' 😁 .";
         let timoutTextLetterContent;
         function textCharLetterContent() {
-                if (indexTextContent < textLetterP.length) {
+            if (indexTextContent < textLetterP.length) {
                 textLetterContent.textContent += textLetterP[indexTextContent];
                 indexTextContent++;
                 setTimeout(textCharLetterContent, 1);
@@ -1173,6 +1173,13 @@
                 $(".wrapperLetterForm").fadeIn()
                 funcTimeoutLetter();
             });
+
+            $('.front').click(function () {
+                $('.box-content').addClass('active');
+                $(".wrapperLetterForm").fadeIn()
+                funcTimeoutLetter();
+            });
+
 
             $('.fa-xmark').click(function () {
                 $('.wrapperLetterForm').css('display', 'none');
